@@ -13,9 +13,9 @@ export default async function handler(req, res) {
   if (req.method === "OPTIONS") {
     return res.status(200).end();
   }
-  const { name, birth } = req.body;
- if (!name || !birth) {
- return res.status(400).json({ error: "이름(name)과 생년월일(birth)이 필요합니다." });
+  const { name, cheer, local } = req.body;
+ if (!name || !cheer || !local) {
+ return res.status(400).json({ error: "정보가 필요합니다." });
  }
   //const name = "김시아";
   //const cheer = "신나는 응원";
